@@ -1,23 +1,29 @@
 """
 Basic tests for ClickCheck SDK
 """
-import pytest
-from clickcheck import ClickCheckClient
-from clickcheck.exceptions import (
-    ClickCheckError,
-    ClickCheckAPIError,
-    ClickCheckRateLimitError,
-    ClickCheckInsufficientCreditsError,
-)
+import sys
+
+# Test imports first
+try:
+    from clickcheck import ClickCheckClient
+    from clickcheck.exceptions import (
+        ClickCheckError,
+        ClickCheckAPIError,
+        ClickCheckRateLimitError,
+        ClickCheckInsufficientCreditsError,
+    )
+except ImportError as e:
+    print(f"❌ Import error: {e}")
+    sys.exit(1)
 
 
 def test_imports():
     """Test that all modules can be imported."""
-    assert ClickCheckClient is not None
-    assert ClickCheckError is not None
-    assert ClickCheckAPIError is not None
-    assert ClickCheckRateLimitError is not None
-    assert ClickCheckInsufficientCreditsError is not None
+    assert ClickCheckClient is not None, "ClickCheckClient should be importable"
+    assert ClickCheckError is not None, "ClickCheckError should be importable"
+    assert ClickCheckAPIError is not None, "ClickCheckAPIError should be importable"
+    assert ClickCheckRateLimitError is not None, "ClickCheckRateLimitError should be importable"
+    assert ClickCheckInsufficientCreditsError is not None, "ClickCheckInsufficientCreditsError should be importable"
 
 
 def test_client_initialization():
@@ -62,3 +68,4 @@ def test_rate_limit_error():
     assert error.retry_after == 60
     assert error.limit == 100
     assert error.remaining == 0
+
