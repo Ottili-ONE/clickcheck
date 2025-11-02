@@ -1,46 +1,32 @@
-name: Tests
+name: Publish to PyPI
 
 on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main ]
+  release:
+    types: [created]
 
 jobs:
-  test:
+  publish:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
-      fail-fast: false  # Don't cancel other jobs if one fails
-
+    
     steps:
     - uses: actions/checkout@v3
     
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: "3.12"
     
-    - name: Install dependencies
+    - name: Install build tools
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements-dev.txt
-        pip install -e .
+        pip install build twine
     
-    - name: Test package import
-      run: |
-        python -c "from clickcheck import ClickCheckClient; print('✅ Package imports successfully')"
+    - name: Build package
+      run: python -m build
     
-    - name: Test client initialization
-      run: |
-        python -c "from clickcheck import ClickCheckClient; c = ClickCheckClient('test'); print('✅ Client initialized')"
-    
-    - name: Test exceptions
-      run: |
-        python -c "from clickcheck import ClickCheckError, ClickCheckAPIError, ClickCheckRateLimitError, ClickCheckInsufficientCreditsError; print('✅ All exceptions importable')"
-    
-    - name: Run pytest tests (optional)
-      continue-on-error: true
-      run: |
-        pytest tests/ -v --tb=short || echo "⚠️ Some pytest tests failed, but package is functional"
+    - name: Publish to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      run: python -m twine upload dist/*
+
