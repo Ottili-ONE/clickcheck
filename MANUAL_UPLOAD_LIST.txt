@@ -1,0 +1,48 @@
+📦 Dateien die zu GitHub hochgeladen werden müssen:
+
+✅ CORE PACKAGE:
+   - clickcheck/__init__.py
+   - clickcheck/client.py
+   - clickcheck/exceptions.py
+
+✅ SETUP & CONFIG:
+   - setup.py
+   - pyproject.toml
+   - MANIFEST.in
+   - requirements.txt
+   - requirements-dev.txt
+
+✅ DOKUMENTATION:
+   - README.md
+   - CHANGELOG.md
+   - CONTRIBUTING.md
+   - LICENSE
+
+✅ GITHUB:
+   - .github/workflows/tests.yml
+   - .github/workflows/publish.yml
+   - .gitignore
+
+❌ NICHT HOCHLADEN (temporäre/helper Dateien):
+   - setup-github.ps1 (optional, kann bleiben)
+   - GITHUB_SETUP.md (optional, kann bleiben)
+   - PYPI_SETUP.md (optional, kann bleiben)
+   - QUICKSTART.md (optional, kann bleiben)
+   - MANUAL_GIT_COMMANDS.txt
+   - MANUAL_UPLOAD_LIST.txt (diese Datei)
+   - FIX_GIT_CONFIG.md (optional)
+
+📋 SCHNELLE ANLEITUNG:
+
+1. Gehe zu: https://github.com/Ottili-ONE/clickcheck
+2. Falls Repo leer ist → "Add file" → "Upload files"
+3. Falls Repo schon Dateien hat → "Add file" → "Upload files"
+
+4. Ziehe alle Dateien aus "F:\neu\ClickCheck AI\clickcheck-api" ins Browser-Fenster
+   (außer den ❌ markierten)
+
+5. Commit message: "Initial commit: ClickCheck Python SDK v1.0.0"
+6. "Commit changes"
+
+FERTIG! ✅
+

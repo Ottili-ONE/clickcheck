@@ -1,0 +1,28 @@
+# Manuelle Git Befehle für GitHub Repository
+
+Führe diese Befehle im Verzeichnis "F:\neu\ClickCheck AI\clickcheck-api" aus:
+
+## 1. Repository initialisieren
+git init
+git remote add origin git@github.com:Ottili-ONE/clickcheck.git
+git branch -M main
+
+## 2. Dateien hinzufügen
+git add .
+
+## 3. Ersten Commit erstellen
+git commit -m "Initial commit: ClickCheck Python SDK v1.0.0"
+
+## 4. Zu GitHub pushen
+git push -u origin main
+
+---
+
+## Falls "main" Branch schon existiert:
+git push -u origin main --force
+
+## Falls SSH Probleme:
+# Verwende HTTPS statt SSH:
+git remote set-url origin https://github.com/Ottili-ONE/clickcheck.git
+git push -u origin main
+
