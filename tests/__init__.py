@@ -1,0 +1,3 @@
+"""
+ClickCheck SDK Tests
+"""
