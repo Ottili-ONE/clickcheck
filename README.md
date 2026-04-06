@@ -1,5 +1,13 @@
 # ClickCheck Python SDK
 
+# IMPORTANT!!!
+# CLICKCHECK AND SERVERCHECK ARE OLD PRODUCTS BY OTTILI ONE!
+# THEY ARE NOT SUPPORTED ANYMORE AND DONT WORK
+# THE SERVER IS SHUT DOWN
+# DONT EXPECT IT TO WORK
+# IMPORTANT!!
+
+
 [![PyPI version](https://badge.fury.io/py/clickcheck.svg)](https://badge.fury.io/py/clickcheck)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
