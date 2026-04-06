@@ -7,6 +7,8 @@
 # DONT EXPECT IT TO WORK
 # IMPORTANT!!
 
+## if someone is interested in this, please contact us at "support@ottili.one".
+
 
 [![PyPI version](https://badge.fury.io/py/clickcheck.svg)](https://badge.fury.io/py/clickcheck)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
